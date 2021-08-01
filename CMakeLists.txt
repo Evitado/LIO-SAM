@@ -25,7 +25,7 @@ find_package(OpenMP REQUIRED)
 find_package(PCL REQUIRED QUIET)
 find_package(OpenCV REQUIRED QUIET)
 find_package(GTSAM REQUIRED QUIET)
-
+find_package(Boost REQUIRED COMPONENTS filesystem program_options system timer)
 add_message_files(
   DIRECTORY msg
   FILES
@@ -62,17 +62,17 @@ catkin_package(
 
 # include directories
 include_directories(
-	include
-	${catkin_INCLUDE_DIRS}
-	${PCL_INCLUDE_DIRS}
+        include
+        ${catkin_INCLUDE_DIRS}
+        ${PCL_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
-	${GTSAM_INCLUDE_DIR}
+        ${GTSAM_INCLUDE_DIR}
 )
 
 # link directories
 link_directories(
-	include
-	${PCL_LIBRARY_DIRS}
+        include
+        ${PCL_LIBRARY_DIRS}
   ${OpenCV_LIBRARY_DIRS}
   ${GTSAM_LIBRARY_DIRS}
 )
